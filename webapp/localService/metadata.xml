@@ -1,0 +1,1820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2009-2019 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZHRFIO_ADDRESSES_SRV" sap:schema-version="1" xml:lang="de" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="AddressDE" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="LockIndicator"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="BeginDate"/>
+					<PropertyRef Name="SequenceNumber"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:label="Personalnr" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="SubtypeText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="IsEditable" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="IsDeletable" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:label="Subtyp" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Infotyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ChangedOn" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Geändert am"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="LockIndicator" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Sperrknz"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:label="Gültig bis" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:label="Gültig ab" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:label="IT-SatzNr" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="2" Name="VersionId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bildsteuerung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="User" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Geändert von"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="AddressRecordType" Type="Edm.String" sap:filterable="false" sap:label="Anschriftenart" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="ContactName" Type="Edm.String" sap:filterable="false" sap:label="c/o" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="60" Name="StreetAndHouseNumber" Type="Edm.String" sap:filterable="false" sap:label="Straße/Hausnr" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="10" Name="PostalCode" Type="Edm.String" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="City" Type="Edm.String" sap:filterable="false" sap:label="Ort" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="District" Type="Edm.String" sap:filterable="false" sap:label="Ortsteil" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="CountryKey" Type="Edm.String" sap:filterable="false" sap:label="Land" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="15" Name="CountryDescription" Type="Edm.String" sap:filterable="false" sap:label="Bezeichnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="14" Name="TelephoneNumber" Type="Edm.String" sap:filterable="false" sap:label="Telefonnummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="Distance" Precision="3" Scale="0" Type="Edm.Decimal" sap:filterable="false" sap:label="Entfernungskm." sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="1" Name="CompanyHousing" Type="Edm.String" sap:filterable="false" sap:label="Werkswohnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="BusRoute" Type="Edm.String" sap:filterable="false" sap:label="Busroute" sap:sortable="false"
+					sap:updatable="false"/>
+				<NavigationProperty FromRole="FromRole_fromAddressDEToFieldMetaData" Name="toFieldMetaData"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressDEToFieldMetaData" ToRole="ToRole_fromAddressDEToFieldMetaData"/>
+				<NavigationProperty FromRole="FromRole_fromAddressDEToValueHelpCountry" Name="toValueHelpCountry"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressDEToValueHelpCountry" ToRole="ToRole_fromAddressDEToValueHelpCountry"/>
+			</EntityType>
+			<EntityType Name="AddressDEDefaultValues" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="LockIndicator"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="BeginDate"/>
+					<PropertyRef Name="SequenceNumber"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personalnr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="SubtypeText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Subtyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Infotyp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="ChangedOn" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Geändert am"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="LockIndicator" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Sperrknz"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig bis"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig ab"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="IT-SatzNr" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="VersionId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bildsteuerung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="User" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Geändert von"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="AddressRecordType" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Anschriftenart"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="ContactName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="c/o"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="StreetAndHouseNumber" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Straße/Hausnr" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="PostalCode" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="City" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Ort" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="District" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Ortsteil"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="CountryKey" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Land"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="CountryDescription" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bezeichnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="14" Name="TelephoneNumber" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Telefonnummer"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Distance" Precision="3" Scale="0" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Entfernungskm."
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="1" Name="CompanyHousing" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Werkswohnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="BusRoute" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Busroute"
+					sap:sortable="false" sap:updatable="false"/>
+				<NavigationProperty FromRole="FromRole_fromAddressDEDefValsToValueHelpCountry" Name="toValueHelpCountry"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressDEDefValsToValueHelpCountry" ToRole="ToRole_fromAddressDEDefValsToValueHelpCountry"/>
+				<NavigationProperty FromRole="FromRole_fromAddressDEDefaultValuesToFldMetaData" Name="toFieldMetaData"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressDEDefaultValuesToFldMetaData" ToRole="ToRole_fromAddressDEDefaultValuesToFldMetaData"/>
+			</EntityType>
+			<EntityType Name="AddressUS" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="SequenceNumber"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="LockIndicator"/>
+					<PropertyRef Name="BeginDate"/>
+				</Key>
+				<Property MaxLength="15" Name="CountryDescription" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personalnr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="SubtypeText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="IsEditable" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="IsDeletable" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Subtyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ChangedOn" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Geändert am"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Infotyp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="IT-SatzNr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="User" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Geändert von"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig bis"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="LockIndicator" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Sperrknz"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig ab"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="VersionId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bildsteuerung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="AddressRecordType" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Anschriftenart"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="ContactName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="c/o"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="AddressLine1" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="AddressLine2" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="City" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Ort" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="County" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="StateId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="StateDescription" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bezeichnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZIPCode" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="CountryKey" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Land"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="AreaCode" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="8" Name="TelephoneNumber" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationType1" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Art"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="AreaCode1" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="8" Name="TelephoneNumber1" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="5" Name="TelephoneExtensionNumber1" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="1" Name="CompanyHousing" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Werkswohnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationType2" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Art"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="AreaCode2" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="8" Name="TelephoneNumber2" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="5" Name="TelephoneExtensionNumber2" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="Distance" Precision="3" Scale="0" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Entfernungskm."
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationType3" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Art"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="AreaCode3" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="8" Name="TelephoneNumber3" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="5" Name="TelephoneExtensionNumber3" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="BusRoute" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Busroute"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationType4" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Art"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="AreaCode4" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="8" Name="TelephoneNumber4" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="5" Name="TelephoneExtensionNumber4" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSToFieldMetaData" Name="toFieldMetaData"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSToFieldMetaData" ToRole="ToRole_fromAddressUSToFieldMetaData"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSToValueHelpRegion" Name="toValueHelpRegion"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSToValueHelpRegion" ToRole="ToRole_fromAddressUSToValueHelpRegion"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSToValueHelpCommunicationID" Name="toValueHelpCommunicationId"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSToValueHelpCommunicationID" ToRole="ToRole_fromAddressUSToValueHelpCommunicationID"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSToValueHelpCommID02" Name="toValueHelpCommID02"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSToValueHelpCommID02" ToRole="ToRole_fromAddressUSToValueHelpCommID02"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSToValueHelpCommID03" Name="toValueHelpCommID03"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSToValueHelpCommID03" ToRole="ToRole_fromAddressUSToValueHelpCommID03"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSToValueHelpCommID04" Name="toValueHelpCommID04"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSToValueHelpCommID04" ToRole="ToRole_fromAddressUSToValueHelpCommID04"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSToValueHelpCountry" Name="toValueHelpCountry"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSToValueHelpCountry" ToRole="ToRole_fromAddressUSToValueHelpCountry"/>
+			</EntityType>
+			<EntityType Name="AddressUSDefaultValues" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="SequenceNumber"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="BeginDate"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personalnr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="SubtypeText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Subtyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ChangedOn" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Geändert am"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Infotyp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="IT-SatzNr" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="User" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Geändert von"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig bis"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="LockIndicator" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Sperrknz" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig ab"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="VersionId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bildsteuerung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="AddressRecordType" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Anschriftenart"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="ContactName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="c/o"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="AddressLine1" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="AddressLine2" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="City" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Ort" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="County" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="StateId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="StateDescription" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bezeichnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="ZIPCode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="CountryKey" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Land"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="AreaCode" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="8" Name="TelephoneNumber" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationType1" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Art"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="AreaCode1" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="8" Name="TelephoneNumber1" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="5" Name="TelephoneExtensionNumber1" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="1" Name="CompanyHousing" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Werkswohnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationType2" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Art"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="AreaCode2" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="8" Name="TelephoneNumber2" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="5" Name="TelephoneExtensionNumber2" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="Distance" Precision="3" Scale="0" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Entfernungskm."
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationType3" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Art"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="AreaCode3" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="8" Name="TelephoneNumber3" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="5" Name="TelephoneExtensionNumber3" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="BusRoute" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Busroute"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationType4" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Art"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="AreaCode4" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="8" Name="TelephoneNumber4" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="5" Name="TelephoneExtensionNumber4" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSDefValsToValueHelpCommID02" Name="toValueHelpCommID02"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefValsToValueHelpCommID02" ToRole="ToRole_fromAddressUSDefValsToValueHelpCommID02"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSDefValsToValueHelpCommID03" Name="toValueHelpCommID03"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefValsToValueHelpCommID03" ToRole="ToRole_fromAddressUSDefValsToValueHelpCommID03"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSDefValsToValueHelpCommID04" Name="toValueHelpCommID04"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefValsToValueHelpCommID04" ToRole="ToRole_fromAddressUSDefValsToValueHelpCommID04"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSDefaultValuesToFldMetaData" Name="toFieldMetaData"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefaultValuesToFldMetaData" ToRole="ToRole_fromAddressUSDefaultValuesToFldMetaData"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSDefValsToValueHelpCountry" Name="toValueHelpCountry"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefValsToValueHelpCountry" ToRole="ToRole_fromAddressUSDefValsToValueHelpCountry"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSDefValsToValueHelpRegion" Name="toValueHelpRegion"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefValsToValueHelpRegion" ToRole="ToRole_fromAddressUSDefValsToValueHelpRegion"/>
+				<NavigationProperty FromRole="FromRole_fromAddressUSDefValsToValueHelpCommID" Name="toValueHelpCommunicationId"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefValsToValueHelpCommID" ToRole="ToRole_fromAddressUSDefValsToValueHelpCommID"/>
+			</EntityType>
+			<EntityType Name="AddressXX" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="LockIndicator"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="BeginDate"/>
+					<PropertyRef Name="SequenceNumber"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personalnr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="SubtypeText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="IsEditable" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="IsDeletable" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Subtyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Infotyp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="ChangedOn" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Geändert am"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="LockIndicator" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Sperrknz"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:label="Gültig bis" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:label="Gültig ab" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:label="IT-SatzNr" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="2" Name="VersionId" Type="Edm.String" sap:filterable="false" sap:label="Bildsteuerung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="12" Name="User" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Geändert von"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="AddressRecordType" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Anschriftenart"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="ContactName" Type="Edm.String" sap:filterable="false" sap:label="c/o" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="60" Name="Street" Type="Edm.String" sap:filterable="false" sap:label="Straße" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="6" Name="HouseNumber" Type="Edm.String" sap:filterable="false" sap:label="Hausnummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="6" Name="AppartmentId" Type="Edm.String" sap:filterable="false" sap:label="ID Wohnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="AddressLine2" Type="Edm.String" sap:filterable="false" sap:label="Adressenzusatz" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="10" Name="PostalCode" Type="Edm.String" sap:filterable="false" sap:label="Postleitzahl" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="City" Type="Edm.String" sap:filterable="false" sap:label="Ort" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="District" Type="Edm.String" sap:filterable="false" sap:label="Ortsteil" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="StateId" Type="Edm.String" sap:filterable="false" sap:label="Region" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="StateDescription" Type="Edm.String" sap:filterable="false" sap:label="Bezeichnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="CountryKey" Type="Edm.String" sap:filterable="false" sap:label="Land" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="15" Name="CountryDescription" Type="Edm.String" sap:filterable="false" sap:label="Bezeichnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="14" Name="TelephoneNumber" Type="Edm.String" sap:filterable="false" sap:label="Telefonnummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="Distance" Precision="3" Scale="0" Type="Edm.Decimal" sap:filterable="false" sap:label="Entfernung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="5" Name="DistanceUnit" Type="Edm.String" sap:filterable="false" sap:label="Kilometer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="1" Name="CompanyHousing" Type="Edm.String" sap:filterable="false" sap:label="Werkswohnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="BusRoute" Type="Edm.String" sap:filterable="false" sap:label="Busroute" sap:sortable="false"
+					sap:updatable="false"/>
+				<NavigationProperty FromRole="FromRole_fromAddressXXToFieldMetaData" Name="toFieldMetaData"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressXXToFieldMetaData" ToRole="ToRole_fromAddressXXToFieldMetaData"/>
+				<NavigationProperty FromRole="FromRole_fromAddressXXToValueHelpCountry" Name="toValueHelpCountry"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressXXToValueHelpCountry" ToRole="ToRole_fromAddressXXToValueHelpCountry"/>
+				<NavigationProperty FromRole="FromRole_fromAddressXXToValueHelpRegion" Name="toValueHelpRegion"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressXXToValueHelpRegion" ToRole="ToRole_fromAddressXXToValueHelpRegion"/>
+			</EntityType>
+			<EntityType Name="AddressXXDefaultValues" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="LockIndicator"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="BeginDate"/>
+					<PropertyRef Name="SequenceNumber"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personalnr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="SubtypeText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Subtyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Infotyp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="ChangedOn" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Geändert am"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="LockIndicator" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Sperrknz"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig bis"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig ab"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="IT-SatzNr" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="VersionId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bildsteuerung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="User" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Geändert von"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="AddressRecordType" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Anschriftenart"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="ContactName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="c/o"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="Street" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Straße"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="6" Name="HouseNumber" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Hausnummer"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="6" Name="AppartmentId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="ID Wohnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="AddressLine2" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Adressenzusatz"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="PsostalCode" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Postleitzahl"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="City" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Ort" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="District" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Ortsteil"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="StateId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Region"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="20" Name="StateDescription" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bezeichnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="CountryKey" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Land"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="CountryDescription" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bezeichnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="14" Name="TelephoneNumber" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Telefonnummer"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Distance" Precision="3" Scale="0" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false" sap:label="Entfernung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="5" Name="DistanceUnit" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Kilometer"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="1" Name="CompanyHousing" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Werkswohnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="BusRoute" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Busroute"
+					sap:sortable="false" sap:updatable="false"/>
+				<NavigationProperty FromRole="FromRole_fromAddressXXDefValsToValueHelpCountry" Name="toValueHelpCountry"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressXXDefValsToValueHelpCountry" ToRole="ToRole_fromAddressXXDefValsToValueHelpCountry"/>
+				<NavigationProperty FromRole="FromRole_fromAddressXXDefaultValuesToFldMetaData" Name="toFieldMetaData"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressXXDefaultValuesToFldMetaData" ToRole="ToRole_fromAddressXXDefaultValuesToFldMetaData"/>
+				<NavigationProperty FromRole="FromRole_fromAddressXXDefValsToValueHelpRegion" Name="toValueHelpRegion"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressXXDefValsToValueHelpRegion" ToRole="ToRole_fromAddressXXDefValsToValueHelpRegion"/>
+			</EntityType>
+			<EntityType Name="FieldMetaData" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="IsEditMode"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="VersionId"/>
+					<PropertyRef Name="FieldName"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="LockIndicator"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="BeginDate"/>
+					<PropertyRef Name="SequenceNumber"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Personalnr" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="IsEditMode" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Infotyp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="IsVisible" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="IsEditable" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="2" Name="VersionId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="FieldName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Feldname" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="IsRequired" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Subtyp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="LockIndicator" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Sperrknz"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false"
+					sap:label="Gültig bis" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false"
+					sap:label="Gültig ab" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="IT-SatzNr" sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="SubtypeInfo" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Subtype"/>
+				</Key>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Infotyp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="DefaultBegda" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false"
+					sap:label="Gültig ab" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Personalnr" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Subtyp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="SubtypeText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="IsCreatable" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="ValueHelpCommunicationId" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="LockIndicator"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="BeginDate"/>
+					<PropertyRef Name="SequenceNumber"/>
+				</Key>
+				<Property MaxLength="4" Name="CommunicationKey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Art" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="VersionId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bildsteuerung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personalnr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="Fieldname" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Feldname" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Infotyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Subtyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="LockIndicator" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:label="Sperrknz" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig bis"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig ab"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="IT-SatzNr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="CommunicationType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Kurzbeschreibung" sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="ValueHelpRegion" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="LockIndicator"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="BeginDate"/>
+					<PropertyRef Name="SequenceNumber"/>
+					<PropertyRef Name="CountryKey"/>
+					<PropertyRef Name="Region"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personalnr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="VersionId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bildsteuerung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Infotyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Subtyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="LockIndicator" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:label="Sperrknz" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig bis"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig ab"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="IT-SatzNr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="CountryKey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Land" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="Region" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Region"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="20" Name="RegionText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Bezeichnung" sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="AddressFR" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="LockIndicator"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="BeginDate"/>
+					<PropertyRef Name="SequenceNumber"/>
+				</Key>
+				<Property MaxLength="15" Name="CountryDescription" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:label="Personalnr" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Infotyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:label="Subtyp" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="LockIndicator" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Sperrknz"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:label="Gültig bis" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:label="Gültig ab" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:label="IT-SatzNr" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ChangedOn" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Geändert am"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="User" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Geändert von"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="VersionId" Type="Edm.String" sap:filterable="false" sap:label="Bildsteuerung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="AddressRecordType" Type="Edm.String" sap:filterable="false" sap:label="Anschriftenart" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="ContactName" Type="Edm.String" sap:filterable="false" sap:label="c/o" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="10" Name="HouseNumber" Type="Edm.String" sap:filterable="false" sap:label="Hausnummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="60" Name="Street" Type="Edm.String" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="AppartNumber" Type="Edm.String" sap:filterable="false" sap:label="Adressenzusatz" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="10" Name="PostalCode" Type="Edm.String" sap:filterable="false" sap:label="Postleitzahl" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="City" Type="Edm.String" sap:filterable="false" sap:label="Ort" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="District" Type="Edm.String" sap:filterable="false" sap:label="Ortsteil" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="CountryKey" Type="Edm.String" sap:filterable="false" sap:label="Land" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="14" Name="TelephoneNumber" Type="Edm.String" sap:filterable="false" sap:label="Telefonnummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="5" Name="InseeCode" Type="Edm.String" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="Municipale" Type="Edm.String" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Distance" Precision="3" Scale="0" Type="Edm.Decimal" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="5" Name="Distance2" Type="Edm.String" sap:filterable="false" sap:label="Kilometer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationArt1" Type="Edm.String" sap:filterable="false" sap:label="Art" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="CommunicationType1" Type="Edm.String" sap:filterable="false" sap:label="Bezeichnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="CommunicationNumber1" Type="Edm.String" sap:filterable="false" sap:label="Nummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="1" Name="CompanyHousing" Type="Edm.String" sap:filterable="false" sap:label="Werkswohnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationArt2" Type="Edm.String" sap:filterable="false" sap:label="Art" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="CommunicationType2" Type="Edm.String" sap:filterable="false" sap:label="Bezeichnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="CommunicationNumber2" Type="Edm.String" sap:filterable="false" sap:label="Nummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="BusRoute" Type="Edm.String" sap:filterable="false" sap:label="Busroute" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationArt3" Type="Edm.String" sap:filterable="false" sap:label="Art" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="CommunicationType3" Type="Edm.String" sap:filterable="false" sap:label="Bezeichnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="CommunicationNumber3" Type="Edm.String" sap:filterable="false" sap:label="Nummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="SubtypeText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bezeichnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="IsEditable" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="IsDeletable" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE" sap:sortable="false"
+					sap:updatable="false"/>
+				<NavigationProperty FromRole="FromRole_fromAddressFRToValueHelpRegion" Name="toValueHelpRegion"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressFRToValueHelpRegion" ToRole="ToRole_fromAddressFRToValueHelpRegion"/>
+				<NavigationProperty FromRole="FromRole_fromAddressFRToValueHelpCommunicationID" Name="toValueHelpCommunicationId"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressFRToValueHelpCommunicationID" ToRole="ToRole_fromAddressFRToValueHelpCommunicationID"/>
+				<NavigationProperty FromRole="FromRole_fromAddressFRToValueHelpCountry" Name="toValueHelpCountry"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressFRToValueHelpCountry" ToRole="ToRole_fromAddressFRToValueHelpCountry"/>
+				<NavigationProperty FromRole="FromRole_fromAddressFRToFieldMetaData" Name="toFieldMetaData"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressFRToFieldMetaData" ToRole="ToRole_fromAddressFRToFieldMetaData"/>
+			</EntityType>
+			<EntityType Name="AddressFRDefaultValues" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="LockIndicator"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="BeginDate"/>
+					<PropertyRef Name="SequenceNumber"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:label="Personalnr" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Infotyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:label="Subtyp" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="LockIndicator" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="Sperrknz"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:label="Gültig bis" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:label="Gültig ab" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:label="IT-SatzNr" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ChangedOn" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Geändert am"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="User" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Geändert von"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="VersionId" Type="Edm.String" sap:filterable="false" sap:label="Bildsteuerung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="AddressRecordType" Nullable="false" Type="Edm.String" sap:filterable="false" sap:label="Anschriftenart"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="ContactName" Type="Edm.String" sap:filterable="false" sap:label="c/o" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="10" Name="HouseNumber" Type="Edm.String" sap:filterable="false" sap:label="Hausnummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="60" Name="Street" Type="Edm.String" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="AppartNumber" Type="Edm.String" sap:filterable="false" sap:label="Adressenzusatz" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="10" Name="PostalCode" Type="Edm.String" sap:filterable="false" sap:label="Postleitzahl" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="City" Type="Edm.String" sap:filterable="false" sap:label="Ort" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="District" Type="Edm.String" sap:filterable="false" sap:label="Ortsteil" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="CountryKey" Type="Edm.String" sap:filterable="false" sap:label="Land" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="14" Name="TelephoneNumber" Type="Edm.String" sap:filterable="false" sap:label="Telefonnummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="5" Name="InseeCode" Type="Edm.String" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="Municipale" Type="Edm.String" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Distance" Precision="3" Scale="0" Type="Edm.Decimal" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="5" Name="Distance2" Type="Edm.String" sap:filterable="false" sap:label="Kilometer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationArt1" Type="Edm.String" sap:filterable="false" sap:label="Art" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="CommunicationType1" Type="Edm.String" sap:filterable="false" sap:label="Bezeichnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="CommunicationNumber1" Type="Edm.String" sap:filterable="false" sap:label="Nummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="1" Name="CompanyHousing" Type="Edm.String" sap:filterable="false" sap:label="Werkswohnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationArt2" Type="Edm.String" sap:filterable="false" sap:label="Art" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="CommunicationType2" Type="Edm.String" sap:filterable="false" sap:label="Bezeichnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="CommunicationNumber2" Type="Edm.String" sap:filterable="false" sap:label="Nummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="3" Name="BusRoute" Type="Edm.String" sap:filterable="false" sap:label="Busroute" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="CommunicationArt3" Type="Edm.String" sap:filterable="false" sap:label="Art" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="CommunicationType3" Type="Edm.String" sap:filterable="false" sap:label="Bezeichnung" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="20" Name="CommunicationNumber3" Type="Edm.String" sap:filterable="false" sap:label="Nummer" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="40" Name="SubtypeText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bezeichnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<NavigationProperty FromRole="FromRole_fromAddressFRDefValsToValueHelpRegion" Name="toValueHelpRegion"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressFRDefValsToValueHelpRegion" ToRole="ToRole_fromAddressFRDefValsToValueHelpRegion"/>
+				<NavigationProperty FromRole="FromRole_fromAddressFRDefaultValuesToFldMetaData" Name="toFieldMetaData"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressFRDefaultValuesToFldMetaData" ToRole="ToRole_fromAddressFRDefaultValuesToFldMetaData"/>
+				<NavigationProperty FromRole="FromRole_fromAddressFRDefValsToValueHelpCountry" Name="toValueHelpCountry"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressFRDefValsToValueHelpCountry" ToRole="ToRole_fromAddressFRDefValsToValueHelpCountry"/>
+				<NavigationProperty FromRole="FromRole_fromAddressFRDefValsToValueHelpCommID" Name="toValueHelpCommunicationId"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromAddressFRDefValsToValueHelpCommID" ToRole="ToRole_fromAddressFRDefValsToValueHelpCommID"/>
+			</EntityType>
+			<EntityType Name="Employee" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Personalnr" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="DefaultVersionid" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="AddressHelpValues" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="FieldName"/>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="ValueKey"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="LockIndicator"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="BeginDate"/>
+					<PropertyRef Name="SequenceNumber"/>
+				</Key>
+				<Property MaxLength="30" Name="FieldName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personalnr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Infotyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ValueKey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Subtyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ValueText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="1" Name="LockIndicator" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Sperrknz"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig bis"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig ab"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="IT-SatzNr"
+					sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="ValueHelpCountry" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+					<PropertyRef Name="Infotype"/>
+					<PropertyRef Name="Subtype"/>
+					<PropertyRef Name="LockIndicator"/>
+					<PropertyRef Name="EndDate"/>
+					<PropertyRef Name="BeginDate"/>
+					<PropertyRef Name="SequenceNumber"/>
+					<PropertyRef Name="CountryKey"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personalnr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="VersionId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Bildsteuerung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="Infotype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Infotyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="4" Name="Subtype" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Subtyp" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="LockIndicator" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:label="Sperrknz" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="EndDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig bis"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="BeginDate" Nullable="false" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:label="Gültig ab"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="SequenceNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="IT-SatzNr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="CountryKey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Land"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="Text" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bezeichnung"
+					sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="EmployeeDetail" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+				</Key>
+				<Property Name="OfficeAddress" Nullable="false" Type="ZHRFIO_ADDRESSES_SRV.OfficeAddress"/>
+				<Property Name="EmployeeName" Nullable="false" Type="ZHRFIO_ADDRESSES_SRV.EmployeeName"/>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Personalnr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="UserId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Benutzer"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="CostCenterId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Kostenstelle"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="20" Name="CostCenterText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bezeichnung"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="CompanyCodeId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Buchungskreis"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="25" Name="CompanyCodeText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name der Firma"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="PersonnelAreaId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="PersBereich"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="PersonnelAreaText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="PBText"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="PersonnelSubareaId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="PersTeilbereich"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="PersonnelSubareaText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="PTBText"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="4" Name="BusinessAreaId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="GeschBereich"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="BusinessAreaText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="GeschBerBez"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="DirectReportsCount" Type="Edm.Int32" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="WorkPhone" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Telefonnummer"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="WorkFax" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Absendernummer"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="WorkMobile" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Telefonnummer"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="241" Name="WorkEmail" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="E-Mail-Adresse"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="EmployeeOrgunitId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="OrgEinheit"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="25" Name="EmployeeOrgunitText" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="OrgEinheitenkurztext" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="EmployeeOrgunitLongtext" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Bezeichnung" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="EmployeePositionId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Planstelle"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="25" Name="EmployeePositionText" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Planstellenkurztext" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="EmployeePositionLongtext" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Bezeichnung" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="EmployeeJobtitleId" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Stelle"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="25" Name="EmployeeJobtitleText" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Stellenbez"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="EmployeeJobtitleLongtext" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Bezeichnung" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="8" Name="ManagerNumber" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Personalnr"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="ManagerName" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Name MA/Bew."
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="LocalTimezoneOffset" Precision="0" Type="Edm.Time" sap:creatable="false" sap:filterable="false" sap:label="Abw. zu UTC"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="1" Name="LocalTimezoneOffsetSign" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Vorzeichen Abweichun" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="1" Name="LocalTimezoneOffsetIsDst" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="6" Name="LocalTimezone" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Zeitzone"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="LocalTimezoneText" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Name der Zeitzone" sap:sortable="false" sap:updatable="false"/>
+				<NavigationProperty FromRole="FromRole_fromEmployeeDetailToEmployeePicture" Name="toEmployeePicture"
+					Relationship="ZHRFIO_ADDRESSES_SRV.fromEmployeeDetailToEmployeePicture" ToRole="ToRole_fromEmployeeDetailToEmployeePicture"/>
+			</EntityType>
+			<EntityType Name="EmployeePicture" m:HasStream="true" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EmployeeNumber"/>
+				</Key>
+				<Property MaxLength="8" Name="EmployeeNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Personalnr" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="128" Name="MimeType" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="MIME Typ"
+					sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<ComplexType Name="EmployeeName">
+				<Property MaxLength="5" Name="FormOfAddress" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Anrede" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="15" Name="AcademicTitle" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Titel" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="FirstName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Vorname" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="MiddleName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Mittelname" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="LastName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Nachname" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="FormattedName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Name MA/Bew." sap:sortable="false" sap:updatable="false"/>
+			</ComplexType>
+			<ComplexType Name="OfficeAddress">
+				<Property MaxLength="6" Name="OfficeBuilding" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Gebäudenummer" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="6" Name="OfficeRoom" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Zimmernummer" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="OfficeStreet" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Straße/Hausnr" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="OfficeHouseNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Hausnummer" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="OfficeAddressSupplement" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="c/o" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="20" Name="OfficeRegion" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Bezeichnung" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="OfficePostalCode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="PLZ / Ort" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="OfficeCity" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Ort"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="OfficeCountryKey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Land" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="50" Name="OfficeCountryText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Bezeichnung lang" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="OfficeAddressFormatted" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+			</ComplexType>
+			<Association Name="fromEmployeeDetailToEmployeePicture" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromEmployeeDetailToEmployeePicture" Type="ZHRFIO_ADDRESSES_SRV.EmployeeDetail"/>
+				<End Multiplicity="0..1" Role="ToRole_fromEmployeeDetailToEmployeePicture" Type="ZHRFIO_ADDRESSES_SRV.EmployeePicture"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromEmployeeDetailToEmployeePicture">
+						<PropertyRef Name="EmployeeNumber"/>
+					</Principal>
+					<Dependent Role="ToRole_fromEmployeeDetailToEmployeePicture">
+						<PropertyRef Name="EmployeeNumber"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressUSToFieldMetaData" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressUSToFieldMetaData" Type="ZHRFIO_ADDRESSES_SRV.AddressUS"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSToFieldMetaData" Type="ZHRFIO_ADDRESSES_SRV.FieldMetaData"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressUSToFieldMetaData">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="LockIndicator"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressUSToFieldMetaData">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="LockIndicator"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressUSToValueHelpRegion" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_fromAddressUSToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.AddressUS"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpRegion"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressUSToValueHelpRegion">
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="SequenceNumber"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressUSToValueHelpRegion">
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="SequenceNumber"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressUSToValueHelpCommunicationID" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_fromAddressUSToValueHelpCommunicationID" Type="ZHRFIO_ADDRESSES_SRV.AddressUS"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSToValueHelpCommunicationID" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCommunicationId"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressUSToValueHelpCommunicationID">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressUSToValueHelpCommunicationID">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressUSToValueHelpCommID02" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressUSToValueHelpCommID02" Type="ZHRFIO_ADDRESSES_SRV.AddressUS"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSToValueHelpCommID02" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCommunicationId"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressUSToValueHelpCommID02">
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Subtype"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressUSToValueHelpCommID02">
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Subtype"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressUSToValueHelpCommID03" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressUSToValueHelpCommID03" Type="ZHRFIO_ADDRESSES_SRV.AddressUS"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSToValueHelpCommID03" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCommunicationId"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressUSToValueHelpCommID03">
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressUSToValueHelpCommID03">
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressUSToValueHelpCommID04" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressUSToValueHelpCommID04" Type="ZHRFIO_ADDRESSES_SRV.AddressUS"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSToValueHelpCommID04" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCommunicationId"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressUSToValueHelpCommID04">
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="LockIndicator"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressUSToValueHelpCommID04">
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="LockIndicator"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressUSToValueHelpCountry" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressUSToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.AddressUS"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCountry"/>
+			</Association>
+			<Association Name="fromAddressFRToFieldMetaData" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressFRToFieldMetaData" Type="ZHRFIO_ADDRESSES_SRV.AddressFR"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressFRToFieldMetaData" Type="ZHRFIO_ADDRESSES_SRV.FieldMetaData"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressFRToFieldMetaData">
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="SequenceNumber"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressFRToFieldMetaData">
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="SequenceNumber"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressFRToValueHelpCountry" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressFRToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.AddressFR"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressFRToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCountry"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressFRToValueHelpCountry">
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="SequenceNumber"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressFRToValueHelpCountry">
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="SequenceNumber"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressFRToValueHelpCommunicationID" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_fromAddressFRToValueHelpCommunicationID" Type="ZHRFIO_ADDRESSES_SRV.AddressFR"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressFRToValueHelpCommunicationID" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCommunicationId"/>
+			</Association>
+			<Association Name="fromAddressFRToValueHelpRegion" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_fromAddressFRToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.AddressFR"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressFRToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpRegion"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressFRToValueHelpRegion">
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="SequenceNumber"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressFRToValueHelpRegion">
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="SequenceNumber"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressUSDefaultValuesToFldMetaData" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressUSDefaultValuesToFldMetaData" Type="ZHRFIO_ADDRESSES_SRV.AddressUSDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSDefaultValuesToFldMetaData" Type="ZHRFIO_ADDRESSES_SRV.FieldMetaData"/>
+			</Association>
+			<Association Name="fromAddressUSDefValsToValueHelpCountry" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressUSDefValsToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.AddressUSDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSDefValsToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCountry"/>
+			</Association>
+			<Association Name="fromAddressUSDefValsToValueHelpRegion" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_fromAddressUSDefValsToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.AddressUSDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSDefValsToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpRegion"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressUSDefValsToValueHelpRegion">
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="Subtype"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressUSDefValsToValueHelpRegion">
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="Subtype"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressUSDefValsToValueHelpCommID" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_fromAddressUSDefValsToValueHelpCommID" Type="ZHRFIO_ADDRESSES_SRV.AddressUSDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSDefValsToValueHelpCommID" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCommunicationId"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressUSDefValsToValueHelpCommID">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressUSDefValsToValueHelpCommID">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressUSDefValsToValueHelpCommID02" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressUSDefValsToValueHelpCommID02" Type="ZHRFIO_ADDRESSES_SRV.AddressUSDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSDefValsToValueHelpCommID02" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCommunicationId"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressUSDefValsToValueHelpCommID02">
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="Subtype"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressUSDefValsToValueHelpCommID02">
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="Subtype"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressUSDefValsToValueHelpCommID04" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressUSDefValsToValueHelpCommID04" Type="ZHRFIO_ADDRESSES_SRV.AddressUSDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSDefValsToValueHelpCommID04" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCommunicationId"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressUSDefValsToValueHelpCommID04">
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="Subtype"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressUSDefValsToValueHelpCommID04">
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="Subtype"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressUSDefValsToValueHelpCommID03" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressUSDefValsToValueHelpCommID03" Type="ZHRFIO_ADDRESSES_SRV.AddressUSDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressUSDefValsToValueHelpCommID03" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCommunicationId"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressUSDefValsToValueHelpCommID03">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressUSDefValsToValueHelpCommID03">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressFRDefValsToValueHelpRegion" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_fromAddressFRDefValsToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.AddressFRDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressFRDefValsToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpRegion"/>
+			</Association>
+			<Association Name="fromAddressFRDefaultValuesToFldMetaData" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressFRDefaultValuesToFldMetaData" Type="ZHRFIO_ADDRESSES_SRV.AddressFRDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressFRDefaultValuesToFldMetaData" Type="ZHRFIO_ADDRESSES_SRV.FieldMetaData"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressFRDefaultValuesToFldMetaData">
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="SequenceNumber"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressFRDefaultValuesToFldMetaData">
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="SequenceNumber"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressFRDefValsToValueHelpCountry" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressFRDefValsToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.AddressFRDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressFRDefValsToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCountry"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressFRDefValsToValueHelpCountry">
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressFRDefValsToValueHelpCountry">
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressFRDefValsToValueHelpCommID" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_fromAddressFRDefValsToValueHelpCommID" Type="ZHRFIO_ADDRESSES_SRV.AddressFRDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressFRDefValsToValueHelpCommID" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCommunicationId"/>
+			</Association>
+			<Association Name="fromAddressXXDefValsToValueHelpCountry" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressXXDefValsToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.AddressXXDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressXXDefValsToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCountry"/>
+			</Association>
+			<Association Name="fromAddressXXDefaultValuesToFldMetaData" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressXXDefaultValuesToFldMetaData" Type="ZHRFIO_ADDRESSES_SRV.AddressXXDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressXXDefaultValuesToFldMetaData" Type="ZHRFIO_ADDRESSES_SRV.FieldMetaData"/>
+			</Association>
+			<Association Name="fromAddressXXDefValsToValueHelpRegion" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_fromAddressXXDefValsToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.AddressXXDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressXXDefValsToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpRegion"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressXXDefValsToValueHelpRegion">
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EmployeeNumber"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressXXDefValsToValueHelpRegion">
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EmployeeNumber"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressXXToFieldMetaData" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressXXToFieldMetaData" Type="ZHRFIO_ADDRESSES_SRV.AddressXX"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressXXToFieldMetaData" Type="ZHRFIO_ADDRESSES_SRV.FieldMetaData"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressXXToFieldMetaData">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="BeginDate"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressXXToFieldMetaData">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="BeginDate"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressXXToValueHelpCountry" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressXXToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.AddressXX"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressXXToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCountry"/>
+			</Association>
+			<Association Name="fromAddressXXToValueHelpRegion" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_fromAddressXXToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.AddressXX"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressXXToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpRegion"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressXXToValueHelpRegion">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressXXToValueHelpRegion">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressDEToFieldMetaData" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressDEToFieldMetaData" Type="ZHRFIO_ADDRESSES_SRV.AddressDE"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressDEToFieldMetaData" Type="ZHRFIO_ADDRESSES_SRV.FieldMetaData"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressDEToFieldMetaData">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="BeginDate"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressDEToFieldMetaData">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="BeginDate"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressDEToValueHelpCountry" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressDEToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.AddressDE"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressDEToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCountry"/>
+			</Association>
+			<Association Name="fromAddressDEToValueHelpRegion" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_fromAddressDEToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.AddressDE"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressDEToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpRegion"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressDEToValueHelpRegion">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressDEToValueHelpRegion">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="EndDate"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressDEDefValsToValueHelpCountry" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressDEDefValsToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.AddressDEDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressDEDefValsToValueHelpCountry" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpCountry"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressDEDefValsToValueHelpCountry">
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressDEDefValsToValueHelpCountry">
+						<PropertyRef Name="BeginDate"/>
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="fromAddressDEDefaultValuesToFldMetaData" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_fromAddressDEDefaultValuesToFldMetaData" Type="ZHRFIO_ADDRESSES_SRV.AddressDEDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressDEDefaultValuesToFldMetaData" Type="ZHRFIO_ADDRESSES_SRV.FieldMetaData"/>
+			</Association>
+			<Association Name="fromAddressDEDefValsToValueHelpRegion" sap:content-version="1">
+				<End Multiplicity="0..1" Role="FromRole_fromAddressDEDefValsToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.AddressDEDefaultValues"/>
+				<End Multiplicity="*" Role="ToRole_fromAddressDEDefValsToValueHelpRegion" Type="ZHRFIO_ADDRESSES_SRV.ValueHelpRegion"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_fromAddressDEDefValsToValueHelpRegion">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+					</Principal>
+					<Dependent Role="ToRole_fromAddressDEDefValsToValueHelpRegion">
+						<PropertyRef Name="Subtype"/>
+						<PropertyRef Name="SequenceNumber"/>
+						<PropertyRef Name="EmployeeNumber"/>
+						<PropertyRef Name="Infotype"/>
+						<PropertyRef Name="LockIndicator"/>
+						<PropertyRef Name="EndDate"/>
+						<PropertyRef Name="BeginDate"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZHRFIO_ADDRESSES_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.EmployeeDetail" Name="EmployeeDetailSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.EmployeePicture" Name="EmployeePictureSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.AddressDE" Name="AddressDESet" sap:content-version="1" sap:pageable="false"
+					sap:searchable="true"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.AddressDEDefaultValues" Name="AddressDEDefaultValuesSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.AddressUS" Name="AddressUSSet" sap:content-version="1" sap:pageable="false"
+					sap:searchable="true"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.AddressUSDefaultValues" Name="AddressUSDefaultValuesSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.AddressXX" Name="AddressXXSet" sap:content-version="1" sap:pageable="false"
+					sap:searchable="true"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.AddressXXDefaultValues" Name="AddressXXDefaultValuesSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.FieldMetaData" Name="FieldMetaDataSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.SubtypeInfo" Name="SubtypeInfoSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.ValueHelpCommunicationId" Name="ValueHelpCommunicationIdSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.ValueHelpRegion" Name="ValueHelpRegionSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.AddressFR" Name="AddressFRSet" sap:content-version="1" sap:pageable="false"
+					sap:searchable="true"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.AddressFRDefaultValues" Name="AddressFRDefaultValuesSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.Employee" Name="EmployeeSet" sap:content-version="1" sap:creatable="false" sap:deletable="false"
+					sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.AddressHelpValues" Name="AddressHelpValuesSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="ZHRFIO_ADDRESSES_SRV.ValueHelpCountry" Name="ValueHelpCountrySet" sap:addressable="false" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressDEDefValsToValueHelpCountry" Name="fromAddressDEDefValsToValueHelpCountrSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressDEDefaultValuesSet" Role="FromRole_fromAddressDEDefValsToValueHelpCountry"/>
+					<End EntitySet="ValueHelpCountrySet" Role="ToRole_fromAddressDEDefValsToValueHelpCountry"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefaultValuesToFldMetaData" Name="fromAddressUSDefaultValuesToFldMetaData_"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSDefaultValuesSet" Role="FromRole_fromAddressUSDefaultValuesToFldMetaData"/>
+					<End EntitySet="FieldMetaDataSet" Role="ToRole_fromAddressUSDefaultValuesToFldMetaData"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefValsToValueHelpCommID" Name="fromAddressUSDefValsToValueHelpCommIDSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSDefaultValuesSet" Role="FromRole_fromAddressUSDefValsToValueHelpCommID"/>
+					<End EntitySet="ValueHelpCommunicationIdSet" Role="ToRole_fromAddressUSDefValsToValueHelpCommID"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefValsToValueHelpCountry" Name="fromAddressUSDefValsToValueHelpCountrSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSDefaultValuesSet" Role="FromRole_fromAddressUSDefValsToValueHelpCountry"/>
+					<End EntitySet="ValueHelpCountrySet" Role="ToRole_fromAddressUSDefValsToValueHelpCountry"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressXXToValueHelpCountry" Name="fromAddressXXToValueHelpCountry_AssocSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressXXSet" Role="FromRole_fromAddressXXToValueHelpCountry"/>
+					<End EntitySet="ValueHelpCountrySet" Role="ToRole_fromAddressXXToValueHelpCountry"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressFRToValueHelpCommunicationID" Name="fromAddressFRToValueHelpCommunicationSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressFRSet" Role="FromRole_fromAddressFRToValueHelpCommunicationID"/>
+					<End EntitySet="ValueHelpCommunicationIdSet" Role="ToRole_fromAddressFRToValueHelpCommunicationID"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSToValueHelpRegion" Name="fromAddressUSToValueHelpRegionSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSSet" Role="FromRole_fromAddressUSToValueHelpRegion"/>
+					<End EntitySet="ValueHelpRegionSet" Role="ToRole_fromAddressUSToValueHelpRegion"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefValsToValueHelpCommID03" Name="fromAddressUSDefValsToVHCommID03Set"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSDefaultValuesSet" Role="FromRole_fromAddressUSDefValsToValueHelpCommID03"/>
+					<End EntitySet="ValueHelpCommunicationIdSet" Role="ToRole_fromAddressUSDefValsToValueHelpCommID03"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressDEToValueHelpCountry" Name="fromAddressDEToValueHelpCountry_AssocSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressDESet" Role="FromRole_fromAddressDEToValueHelpCountry"/>
+					<End EntitySet="ValueHelpCountrySet" Role="ToRole_fromAddressDEToValueHelpCountry"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressXXDefaultValuesToFldMetaData" Name="fromAddressXXDefaultValuesToFldMetaData_"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressXXDefaultValuesSet" Role="FromRole_fromAddressXXDefaultValuesToFldMetaData"/>
+					<End EntitySet="FieldMetaDataSet" Role="ToRole_fromAddressXXDefaultValuesToFldMetaData"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSToValueHelpCountry" Name="fromAddressUSToValueHelpCountry_AssocSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSSet" Role="FromRole_fromAddressUSToValueHelpCountry"/>
+					<End EntitySet="ValueHelpCountrySet" Role="ToRole_fromAddressUSToValueHelpCountry"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressFRToFieldMetaData" Name="fromAddressFRToFieldMetaDataSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressFRSet" Role="FromRole_fromAddressFRToFieldMetaData"/>
+					<End EntitySet="FieldMetaDataSet" Role="ToRole_fromAddressFRToFieldMetaData"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSToValueHelpCommID04" Name="fromAddressUSToValueHelpCommID04Set"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSSet" Role="FromRole_fromAddressUSToValueHelpCommID04"/>
+					<End EntitySet="ValueHelpCommunicationIdSet" Role="ToRole_fromAddressUSToValueHelpCommID04"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressXXDefValsToValueHelpRegion" Name="fromAddressXXDefValsToValueHelpRegionSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressXXDefaultValuesSet" Role="FromRole_fromAddressXXDefValsToValueHelpRegion"/>
+					<End EntitySet="ValueHelpRegionSet" Role="ToRole_fromAddressXXDefValsToValueHelpRegion"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressXXDefValsToValueHelpCountry" Name="fromAddressXXDefValsToValueHelpCountry_A"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressXXDefaultValuesSet" Role="FromRole_fromAddressXXDefValsToValueHelpCountry"/>
+					<End EntitySet="ValueHelpCountrySet" Role="ToRole_fromAddressXXDefValsToValueHelpCountry"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressDEDefValsToValueHelpRegion" Name="fromAddressDEDefValsToValueHelpRegionSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressDEDefaultValuesSet" Role="FromRole_fromAddressDEDefValsToValueHelpRegion"/>
+					<End EntitySet="ValueHelpRegionSet" Role="ToRole_fromAddressDEDefValsToValueHelpRegion"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressDEToFieldMetaData" Name="fromAddressDEToFieldMetaData_AssocSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressDESet" Role="FromRole_fromAddressDEToFieldMetaData"/>
+					<End EntitySet="FieldMetaDataSet" Role="ToRole_fromAddressDEToFieldMetaData"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressFRDefValsToValueHelpRegion" Name="fromAddressFRDefValsToValueHelpRegion_As"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressFRDefaultValuesSet" Role="FromRole_fromAddressFRDefValsToValueHelpRegion"/>
+					<End EntitySet="ValueHelpRegionSet" Role="ToRole_fromAddressFRDefValsToValueHelpRegion"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromEmployeeDetailToEmployeePicture" Name="fromEmployeeDetailToEmployeePictureSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="EmployeeDetailSet" Role="FromRole_fromEmployeeDetailToEmployeePicture"/>
+					<End EntitySet="EmployeePictureSet" Role="ToRole_fromEmployeeDetailToEmployeePicture"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSToValueHelpCommID03" Name="fromAddressUSToValueHelpCommID03Set"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSSet" Role="FromRole_fromAddressUSToValueHelpCommID03"/>
+					<End EntitySet="ValueHelpCommunicationIdSet" Role="ToRole_fromAddressUSToValueHelpCommID03"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressDEDefaultValuesToFldMetaData" Name="fromAddressDEDefaultValuesToFldMetaData_"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressDEDefaultValuesSet" Role="FromRole_fromAddressDEDefaultValuesToFldMetaData"/>
+					<End EntitySet="FieldMetaDataSet" Role="ToRole_fromAddressDEDefaultValuesToFldMetaData"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSToValueHelpCommunicationID" Name="fromAddressUSToValueHelpCommunicationSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSSet" Role="FromRole_fromAddressUSToValueHelpCommunicationID"/>
+					<End EntitySet="ValueHelpCommunicationIdSet" Role="ToRole_fromAddressUSToValueHelpCommunicationID"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressFRToValueHelpCountry" Name="fromAddressFRToValueHelpCountrySet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressFRSet" Role="FromRole_fromAddressFRToValueHelpCountry"/>
+					<End EntitySet="ValueHelpCountrySet" Role="ToRole_fromAddressFRToValueHelpCountry"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSToFieldMetaData" Name="fromAddressUSToFieldMetaData_AssocSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSSet" Role="FromRole_fromAddressUSToFieldMetaData"/>
+					<End EntitySet="FieldMetaDataSet" Role="ToRole_fromAddressUSToFieldMetaData"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressXXToFieldMetaData" Name="fromAddressXXToFieldMetaData_AssocSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressXXSet" Role="FromRole_fromAddressXXToFieldMetaData"/>
+					<End EntitySet="FieldMetaDataSet" Role="ToRole_fromAddressXXToFieldMetaData"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressFRDefValsToValueHelpCommID" Name="fromAddressFRDefValsToValueHelpCommID_As"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressFRDefaultValuesSet" Role="FromRole_fromAddressFRDefValsToValueHelpCommID"/>
+					<End EntitySet="ValueHelpCommunicationIdSet" Role="ToRole_fromAddressFRDefValsToValueHelpCommID"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefValsToValueHelpRegion" Name="fromAddressUSDefValsToValueHelpRegionSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSDefaultValuesSet" Role="FromRole_fromAddressUSDefValsToValueHelpRegion"/>
+					<End EntitySet="ValueHelpRegionSet" Role="ToRole_fromAddressUSDefValsToValueHelpRegion"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressFRToValueHelpRegion" Name="fromAddressFrToValueHelpRegionSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressFRSet" Role="FromRole_fromAddressFRToValueHelpRegion"/>
+					<End EntitySet="ValueHelpRegionSet" Role="ToRole_fromAddressFRToValueHelpRegion"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressFRDefaultValuesToFldMetaData" Name="fromAddressFRDefaultValuesToFldMetaDaSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressFRDefaultValuesSet" Role="FromRole_fromAddressFRDefaultValuesToFldMetaData"/>
+					<End EntitySet="FieldMetaDataSet" Role="ToRole_fromAddressFRDefaultValuesToFldMetaData"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressFRDefValsToValueHelpCountry" Name="fromAddressFRDefValsToValueHelpCountrSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressFRDefaultValuesSet" Role="FromRole_fromAddressFRDefValsToValueHelpCountry"/>
+					<End EntitySet="ValueHelpCountrySet" Role="ToRole_fromAddressFRDefValsToValueHelpCountry"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSToValueHelpCommID02" Name="fromAddressUSToValueHelpCommID02Set"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSSet" Role="FromRole_fromAddressUSToValueHelpCommID02"/>
+					<End EntitySet="ValueHelpCommunicationIdSet" Role="ToRole_fromAddressUSToValueHelpCommID02"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefValsToValueHelpCommID02" Name="fromAddressUSDefValsToVHCommID02Set"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSDefaultValuesSet" Role="FromRole_fromAddressUSDefValsToValueHelpCommID02"/>
+					<End EntitySet="ValueHelpCommunicationIdSet" Role="ToRole_fromAddressUSDefValsToValueHelpCommID02"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressUSDefValsToValueHelpCommID04" Name="fromAddressUSDefValsToVHCommID04Set"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressUSDefaultValuesSet" Role="FromRole_fromAddressUSDefValsToValueHelpCommID04"/>
+					<End EntitySet="ValueHelpCommunicationIdSet" Role="ToRole_fromAddressUSDefValsToValueHelpCommID04"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressXXToValueHelpRegion" Name="fromAddressXXToValueHelpRegionSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressXXSet" Role="FromRole_fromAddressXXToValueHelpRegion"/>
+					<End EntitySet="ValueHelpRegionSet" Role="ToRole_fromAddressXXToValueHelpRegion"/>
+				</AssociationSet>
+				<AssociationSet Association="ZHRFIO_ADDRESSES_SRV.fromAddressDEToValueHelpRegion" Name="fromAddressDEToValueHelpRegionSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="AddressDESet" Role="FromRole_fromAddressDEToValueHelpRegion"/>
+					<End EntitySet="ValueHelpRegionSet" Role="ToRole_fromAddressDEToValueHelpRegion"/>
+				</AssociationSet>
+			</EntityContainer>
+			<atom:link href="./sap/ZHRFIO_ADDRESSES_SRV/$metadata" rel="self" xmlns:atom="http://www.w3.org/2005/Atom"/>
+			<atom:link href="./sap/ZHRFIO_ADDRESSES_SRV/$metadata" rel="latest-version" xmlns:atom="http://www.w3.org/2005/Atom"/>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
