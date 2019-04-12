@@ -40,6 +40,9 @@
 					},
 					"hcm.fab.mybankdetails.controller.CommonCountryController": {
 						"controllerName": "hcm.fab.mybankdetails.ZHCMFAB_BANK_MAN_EX.controller.CommonCountryControllerCustom"
+					},
+					"hcm.fab.mybankdetails.controller.CommonCountryDisplayController": {
+						"controllerName": "hcm.fab.mybankdetails.ZHCMFAB_BANK_MAN_EX.controller.CommonCountryDisplayControllerCustom"
 					}
 				}
 			}
@@ -47,6 +50,14 @@
 		"contentDensities": {
 			"compact": true,
 			"cozy": true
+		},
+		"models": {
+			"i18nz": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "hcm.fab.mybankdetails.ZHCMFAB_BANK_MAN_EX.i18n.i18n_z"
+				}
+			}
 		}
 	},
 	"sap.platform.abap": {
