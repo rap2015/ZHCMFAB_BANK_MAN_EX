@@ -7,7 +7,20 @@
 		"applicationVersion": {
 			"version": "1.0.0"
 		},
-		"title": "{{appTitle}}"
+		"title": "{{appTitle}}",
+		"dataSources": {
+			"ZHPY_BANK_UTIL_SRV": {
+				"uri": "/sap/opu/odata/sap/ZHPY_BANK_UTIL_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZHPY_BANK_UTIL_SRV/metadata.xml"
+				}
+			}
+		},
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		}
 	},
 	"sap.ui": {
 		"_version": "1.1.0",
@@ -57,6 +70,16 @@
 				"settings": {
 					"bundleName": "hcm.fab.mybankdetails.ZHCMFAB_BANK_MAN_EX.i18n.i18n_z"
 				}
+			},
+			"MPYUTIL": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request",
+					"useBatch": true
+				},
+				"dataSource": "ZHPY_BANK_UTIL_SRV"
 			}
 		}
 	},

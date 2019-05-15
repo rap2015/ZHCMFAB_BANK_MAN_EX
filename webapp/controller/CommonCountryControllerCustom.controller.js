@@ -1,28 +1,27 @@
 sap.ui.controller("hcm.fab.mybankdetails.ZHCMFAB_BANK_MAN_EX.controller.CommonCountryControllerCustom", {
 
+// ON INIT
 	onInit: function () {
-		var selId = this.createId("selPaymentMethodId");
-		var selPmMtd = this.byId(selId);
-		selPmMtd.attachChange(this.onPaymentMethodChg, this);
-
-		//Dummy
-		var bankIdId = this.createId("inpBankId");
-		var bankId = this.byId(bankIdId);
-
+		
+		// Attach event to Select Payment Method Dropdown, to control the visibility of bank fields
+		this.getView().byId("selPaymentMethodId").attachChange(this.onPaymentMethodChg, this);
+		var bankId = this.getView().byId("inpBankId");
 		var customConfig = bankId.data("searchHelpConfig");
-		//Removing SWIFT Code filed
+	
+		//Removing SWIFT Code filed on Bank F4 help
 		customConfig.filterAttributes.pop();
-		//Removing SWIFT Code filed from Table
+
+		//Removing Bank Number on Bank F4 help
+		customConfig.filterAttributes.pop();
+
+		//Removing SWIFT Code filled in Table
 		customConfig.resultListAttributes.splice(3, 1);
 	},
 
 	onAfterRendering: function () {
-		var selId = this.createId("selPaymentMethodId");
-		var selPmMtd = this.byId(selId);
-		var selKey = selPmMtd.getSelectedKey();
-		
-		var rNumId = this.createId("selBankControlKey");
-		var rNumber = this.byId(rNumId);
+		// Add Bank Type dropedown values for Add Account Scenario
+		var selKey = this.getView().byId("selPaymentMethodId").getSelectedKey();
+		var rNumber = this.getView().byId("selBankControlKey");
 		var oModel = this.getView().getModel("ValueHelpBankControlKey");
 		if (!oModel) {
 			if (rNumber.getItems().length === 0) {
@@ -41,18 +40,20 @@ sap.ui.controller("hcm.fab.mybankdetails.ZHCMFAB_BANK_MAN_EX.controller.CommonCo
 			}
 		}
 		
+// Control Visibility of bank fields for payment method K (Check)		
 		if (selKey === "K") {
-			var bnkKey = this.byId(this.createId("inpBankId"));
-			var bnkCtrlK = this.byId(this.createId("selBankControlKey"));
-			var bnkAcN = this.byId(this.createId("inpBankAccountNumber"));
+		
 			this.clearField("BankId");
 			this.clearField("BankControlKey");
 			this.clearField("BankAccountNumber");
-			bnkKey.setVisible(false);
-			bnkKey.setDescription();
-			bnkCtrlK.setVisible(false);
-			bnkAcN.setVisible(false);
+			
+			this.getView().byId("inpBankId").setVisible(false);
+			this.getView().byId("inpBankId").setDescription();
+			this.getView().byId("selBankControlKey").setVisible(false);
+			this.getView().byId("inpBankAccountNumber").setVisible(false);
+			
 		}
+		
 // removing Country selector form which record type selection
         var pItems = this.oView.getParent().getAggregation("items");
         pItems.forEach(function (form, indx) {
@@ -81,24 +82,25 @@ sap.ui.controller("hcm.fab.mybankdetails.ZHCMFAB_BANK_MAN_EX.controller.CommonCo
 
 	onPaymentMethodChg: function (e) {
 		var selKey = e.getParameter("selectedItem").getProperty("key");
-		var bnkKey = this.byId(this.createId("inpBankId"));
-		var bnkCtrlK = this.byId(this.createId("selBankControlKey"));
-		var bnkAcN = this.byId(this.createId("inpBankAccountNumber"));
+	
 		if (selKey === "K") {
-			this.clearField("BankId");
-			this.clearField("BankControlKey");
-			this.clearField("BankAccountNumber");
-			bnkKey.setVisible(false);
-			bnkKey.setDescription();
-			bnkCtrlK.setVisible(false);
-			bnkAcN.setVisible(false);
+			
+			this.getView().byId("inpBankId").setValue("");
+			this.getView().byId("selBankControlKey").setSelectedKey();
+			this.getView().byId("inpBankAccountNumber").setValue("");
+			
+			this.getView().byId("inpBankId").setVisible(false);
+			this.getView().byId("inpBankId").setDescription();
+			this.getView().byId("selBankControlKey").setVisible(false);
+			this.getView().byId("inpBankAccountNumber").setVisible(false);
 		} else {
-			bnkKey.setVisible(true);
-			bnkCtrlK.setVisible(true);
-			bnkAcN.setVisible(true);
+		
+			this.getView().byId("inpBankId").setVisible(true);
+			this.getView().byId("selBankControlKey").setVisible(true);
+			this.getView().byId("inpBankAccountNumber").setVisible(true);
 		}
 	},
-	_handleBankFieldMetaData: function () {
+	_handleBankFieldMetaData: function() {
 
 	}
 
